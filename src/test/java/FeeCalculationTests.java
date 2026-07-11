@@ -9,13 +9,10 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class FeeCalculationTests {
     @Test
     void test01Open() {
-        open("https://ya.ru");
+        open("https://slqa.ru/cases/fc/v01/index.php");
         sleep(3_000);
-        $(By.id("text")).sendKeys("100");
-        sleep(3_000);
-        $(By.id("text")).setValue("200");
-        sleep(2_000);
-        //$(By.name("submit")).click();
+        $(By.name("sum")).sendKeys("100");
+        $(By.name("submit")).click();
         sleep(10_000);
     }
 }
