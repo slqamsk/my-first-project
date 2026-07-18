@@ -9,6 +9,6 @@ public class PizzeriaTests {
                 .shouldBe(exist)
                 .shouldBe(visible)
                 .click();
-        $x("//h3[contains(.,'Четыре сыра')]/../button").click();
+        $x("//div[contains(@class,'card') and contains(., 'Четыре сыра')]/button").click();
     }
 }
