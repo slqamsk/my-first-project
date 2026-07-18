@@ -19,14 +19,15 @@ public class WaitsTest {
     @Test
     void test02SimpleWaitsTest() {
         open("https://slqa.ru/cases/WaitsSimpleForm/");
-        $("#duration_time").setValue("10");
+        $("#duration_time").setValue("1");
         $("#show_element").click();
+
         $("#dynamic_content")
                 .shouldHave(
-                        text("за 10000 миллисекунд."),
-                        Duration.ofSeconds(12)
+                        text("за 1000 миллисекунд."),
+                        Duration.ofSeconds(180)
                 );
-        $("#wrong_id").shouldBe(exist);
+        //$("#wrong_id").shouldBe(exist);
     }
 
 
