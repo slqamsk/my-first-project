@@ -15,7 +15,7 @@ public class FeeCalculationTests {
         open("https://slqa.ru/cases/fc/v01/index.php");
 
         // Первый расчёт
-        $(By.name("sum")).setValue("100");
+        $(By.name("sum")).setValue("1000");
         $(By.name("submit")).click();
         $(By.name("sum")).shouldBe(exist);
         $(By.name("sum")).shouldBe(visible);
@@ -39,10 +39,28 @@ public class FeeCalculationTests {
         SelenideElement sumField = $(By.name("sum"));
         SelenideElement submitButton = $(By.name("submit"));
         ElementsCollection sumFields = $$(By.name("sum"));
-        sumField.type("100");
+        sumField.type("1000");
         submitButton.click();
         submitButton.shouldBe(Condition.interactable).shouldBe(Condition.editable);
         System.out.println("Размер списка с именем 'sum'" + sumFields.size());
 
     }
+
+    @Test
+    void test03() {
+        open("https://slqa.ru/cases/fc/v01/index.php");
+        sleep(5_000);
+        $(By.name("sum")).setValue("2000");
+        $(By.name("sum")).pressEnter();
+        sleep(5_000);
+        $x("//span[@name='com']").shouldHave(exactText("20"));
+        sleep(5_000);
+
+        //$(By.name("sum")).setValue("200");
+        $x("//input[@name='sum']").setValue("200");
+        sleep(10_000);
+
+    }
+
+
 }
