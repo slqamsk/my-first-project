@@ -49,13 +49,13 @@ public class SecondLoginTests {
         $("#greeting").shouldHave(text("Welcome, standard_user!"));
         $("#greeting").shouldBe(visible);
 
-        closeWindow();
+        
         System.out.println("Закончили тест test01_success_login_button.");
     }
     //02. Корректный логин, пароль не соответствует логину - ошибка
     @Test
     void test02_error_wrong_password() {
-        Configuration.browser = "firefox";
+        Configuration.browser = "chrome";
         System.out.println("Начали тест test02_error_wrong_password.");
         open("https://slqa.ru/cases/ChatGPTLogin/");
 
@@ -68,7 +68,7 @@ public class SecondLoginTests {
         $("#greeting").shouldBe(empty);
         $("#greeting").shouldNotBe(visible);
 
-        closeWindow();
+        
         System.out.println("Закончили тест test02_error_wrong_password.");
     }
     //03. Корректные логин и пароль - успешный вход в систему по нажатию клавиши Enter на клавиатуре
@@ -87,7 +87,7 @@ public class SecondLoginTests {
         $("#greeting").shouldHave(text("Welcome, standard_user!"));
         $("#greeting").shouldBe(visible);
 
-        closeWindow();
+        
         System.out.println("Закончили тест test03_success_login_enter.");
     }
     //04. Выход из системы
@@ -108,13 +108,13 @@ public class SecondLoginTests {
         $("#password").shouldBe(visible);
         $("#loginButton").shouldBe(visible);
 
-        closeWindow();
+        
         System.out.println("Закончили тест test04_logout_success.");
     }
     //05. Некорректный логин, пароль от корректного логина - ошибка
     @Test
     void test05_wrong_login_correct_password() {
-        Configuration.browser = "firefox";
+        Configuration.browser = "chrome";
         System.out.println("Начали тест test05_wrong_login_correct_password.");
         open("https://slqa.ru/cases/ChatGPTLogin/");
 
@@ -127,7 +127,7 @@ public class SecondLoginTests {
         $("#greeting").shouldBe(empty);
         $("#greeting").shouldNotBe(visible);
 
-        closeWindow();
+        
         System.out.println("Закончили тест test05_wrong_login_correct_password.");
     }
     //06. Корректный логин, пароль от другого корректного логина - ошибка
@@ -162,7 +162,7 @@ public class SecondLoginTests {
         $("#greeting").shouldBe(empty);
         $("#greeting").shouldNotBe(visible);
 
-        closeWindow();
+        
         System.out.println("Закончили тест test07_error_blocked_user.");
     }
     //08. Пустой логин, пароль от корректного логина
@@ -180,13 +180,13 @@ public class SecondLoginTests {
         $("#greeting").shouldBe(empty);
         $("#greeting").shouldNotBe(visible);
 
-        closeWindow();
+        
         System.out.println("Закончили тест test08_empty_login_correct_password.");
     }
     //09. Пустой пароль, корректный логин
     @Test
     void test09_error_empty_password() {
-        Configuration.browser = "firefox";
+        Configuration.browser = "chrome";
         System.out.println("Начали тест test09_error_empty_password.");
         open("https://slqa.ru/cases/ChatGPTLogin/");
 
@@ -198,7 +198,7 @@ public class SecondLoginTests {
         $("#greeting").shouldBe(empty);
         $("#greeting").shouldNotBe(visible);
 
-        closeWindow();
+        
         System.out.println("Закончили тест test09_error_empty_password.");
     }
     //10. Пустые логин и пароль
@@ -215,7 +215,7 @@ public class SecondLoginTests {
         $("#greeting").shouldBe(empty);
         $("#greeting").shouldNotBe(visible);
 
-        closeWindow();
+        
         System.out.println("Закончили тест test10_error_empty_login_and_password.");
     }
     //11. Проверить, что при вводе пароль скрыт за звёздочками
@@ -288,7 +288,7 @@ public class SecondLoginTests {
         $("#greeting").shouldBe(visible);
         $("#logoutButton").click();
 
-        closeWindow();
+        
         System.out.println("Закончили тест test12_success_logins_different_users.");
     }
 }
